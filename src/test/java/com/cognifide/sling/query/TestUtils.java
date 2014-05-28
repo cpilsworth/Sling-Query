@@ -9,14 +9,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.cognifide.sling.query.mock.json.JsonToMockResource;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.testing.resourceresolver.MockResourceResolver;
-import org.apache.sling.testing.resourceresolver.MockResourceResolverFactoryOptions;
 import org.junit.Assert;
 
 import com.cognifide.sling.query.api.function.Option;
-import com.cognifide.sling.query.mock.json.JsonToResource;
+import com.cognifide.sling.query.mock.json.JsonToMockResource;
 
 public final class TestUtils {
 	private TestUtils() {
