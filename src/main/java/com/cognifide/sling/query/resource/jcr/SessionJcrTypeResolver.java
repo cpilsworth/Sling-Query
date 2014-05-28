@@ -18,7 +18,10 @@ public class SessionJcrTypeResolver implements JcrTypeResolver {
 		NodeTypeManager m = null;
 		try {
 			if (resolver != null) {
-				m = resolver.adaptTo(Session.class).getWorkspace().getNodeTypeManager();
+				Session session = resolver.adaptTo(Session.class);
+				if (session != null) {
+					m = session.getWorkspace().getNodeTypeManager();
+				}
 			}
 		} catch (RepositoryException e) {
 			LOG.error("Can't get node type manager", e);

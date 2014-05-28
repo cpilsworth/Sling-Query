@@ -9,7 +9,10 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.cognifide.sling.query.mock.json.JsonToMockResource;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.testing.resourceresolver.MockResourceResolver;
+import org.apache.sling.testing.resourceresolver.MockResourceResolverFactoryOptions;
 import org.junit.Assert;
 
 import com.cognifide.sling.query.api.function.Option;
@@ -22,7 +25,7 @@ public final class TestUtils {
 	public static Resource getTree() {
 		InputStream jsonStream = TestUtils.class.getClassLoader().getResourceAsStream("sample_tree.json");
 		try {
-			Resource resource = JsonToResource.parse(jsonStream);
+			Resource resource = JsonToMockResource.parse(jsonStream);
 			jsonStream.close();
 			return resource;
 		} catch (IOException e) {
